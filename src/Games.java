@@ -24,17 +24,9 @@ public class Games implements GameInterface {
 
 
     @Override
-    public GameModel MatchResults(int _countPoints, int _countMatches, int _countWinMatches,
-                                  int _countEvenMatches, int _countLostMatches) {
-        var games = new GameModel() {
-            final Integer countPoints = _countPoints;
-            final Integer countMatches = _countMatches;
-            final Integer countWinMatches = _countWinMatches;
-            final Integer countEvenMatches = _countEvenMatches;
-            final Integer countLostMatches = _countLostMatches;
+    public GameModel MatchResults(GameModel gameModel) {
 
-        };
-        return games;
+        return gameModel ;
     }
 
     @Override
@@ -56,7 +48,7 @@ public class Games implements GameInterface {
             }
             result.CountMatches++;
         }
-        return MatchResults(result.CountPoints, result.CountMatches, result.CountWinMatches, result.CountEvenMatches, result.CountLostMatches);
+        return MatchResults(result);
     }
 
     private int getRandomNumberInRange(int min, int max) {
